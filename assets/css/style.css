@@ -1,0 +1,616 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;500;600&display=swap');
+:root{
+    --Poppins: 'Poppins', sans-serif;
+    --Nunito:'Nunito', sans-serif;
+    --Black-ever: #000;
+    --blue-bg-gradient: rgba(55, 101, 210, 0.37);
+    --blue-bg-gradient-5per: rgba(55, 101, 210, 0.5);
+    --blue-bg-gradient-hover: rgba(55, 101, 210, 0.2);
+    --yellow-bg-gradient: rgba(247, 181, 13, 0.45);
+    --yellow-bg-gradient-hover: rgba(247, 181, 13, 0.3);
+    --blue-bg-slider: #1054f3;
+    --100-blue: #3765D2;
+    --100-yellow: #D9930D;
+    --blue-shadow: rgba(55, 101, 210, 0.28);
+    --yellow-shadow: #FFE6AE;
+    --white: #ffff;
+    --bg-mb-nav:#061C52;
+    --gray: #c4c4c4;
+    --black-90: #434343;
+}
+
+body{
+    user-select: none;
+}
+
+.logo{
+    width: 50px;
+    height: 50px;
+}
+
+.nav-links{
+    font-family: var(--Poppins);
+    font-size: 18px;
+    font-weight: 400;
+    position: relative;
+}
+
+.nav-links > a{
+    color: var(--Black-ever) ;
+}
+
+.nav-links::before{
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: -10px;
+    width: 0;
+    height: 2px;
+    background-color: var(--Black-ever);
+    transition: .5s ease-in;
+}
+
+.nav-links:hover::before{
+    width: 100%;
+}
+
+.nav-links.activeClass::before {
+    width: 100%;
+}
+
+.sign_up_btn{
+    display: block;
+    border: none;
+    outline: none;
+    background-color: var(--blue-bg-gradient);
+    font-family: var(--Poppins);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--100-blue);
+    padding: 10px 15px;
+    border-radius: 20px;
+    box-shadow: 2px 4px 10px var(--blue-shadow);
+}
+.sign_up_btn.clicked, .premium_btn.clicked{
+    transform: scale(.95);
+}
+.sign_up_btn.show{
+    display: none;
+}
+
+.account{
+    min-width: 50px;
+    position: relative;
+}
+
+.account-info{
+    position: relative;
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    font-family: var(--Poppins);
+    font-weight: 400;
+    font-size: 18px;
+}
+.account-info > .acc{
+    position: relative;
+    text-decoration: none;
+    color: var(--gray);
+    display: none;
+}
+.account-info > .acc.show{
+    display: inline;
+}
+.account-info > .acc:hover{
+    color: var(--Black-ever);
+    text-decoration: underline;
+}
+.log-out-btn{
+    width: 100px;
+    height: 40px;
+    border: none;
+    background-color: var(--blue-bg-gradient-5per);
+    text-transform: uppercase;
+    font-family: var(--Poppins);
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--100-blue);
+}
+.log-out-btn.clicked{
+    transform: scale(.95);
+}
+.dropdown{
+    z-index: 5;
+    overflow: hidden;
+    height: 0px;
+    width: 110px;
+    margin-top: 10px;
+    position: absolute;
+    right: 0;
+}
+.dropdown.show{
+    height: 50px;
+}
+.log-out-btn:hover{
+    background-color: var(--blue-bg-gradient);
+}
+
+
+.premium_btn{
+    border: none;
+    outline: none;
+    background-color: var(--yellow-bg-gradient);
+    font-family: var(--Poppins);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--100-yellow);
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 2px 4px 10px var(--yellow-shadow);
+}
+
+.sign_up_btn:hover{
+    background-color: var(--blue-bg-gradient-hover);
+}
+.premium_btn:hover{
+    background-color: var(--yellow-bg-gradient-hover);
+}
+.blocks{
+    cursor: pointer;
+    z-index: 100;
+}
+.upperBlock, .middleBlock, .lowerBlock{
+    width: 30px;
+    height: 3px;
+    border-radius: 10px;
+    background: var(--Black-ever);
+    cursor: pointer;
+    transition: .6s ease-in;
+}
+
+.upperBlock.rotateBlock{
+    transform-origin: left;
+    transform: rotate(45deg);
+    width: 36px;
+}
+
+.lowerBlock.rotateBlock {
+    transform-origin: left;
+    transform: rotate(-45deg);
+    width: 36px;
+}
+
+.middleBlock.rotateBlock {
+    background: var(--white);
+}
+
+
+.mb-nav-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: var(--white) !important;
+    cursor: pointer;
+    position: relative;
+}
+.mb-nav-link::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0px;
+    background-color: var(--100-blue);
+    transition: .5s ease-in;
+}
+.mb-nav-link.activeClass::before{
+    width: 15px;
+}
+.mb-nav-link:hover::before{
+    width: 15px;
+}
+
+.mobile-navigation{
+    border-radius: 5px;
+    box-shadow: 1px 2px 5px var(--gray);
+    height: 0px;
+    overflow: hidden;
+    transition: 1s ease-in-out;
+}
+.mobile-navigation.showNavbar{
+    height: 360px;
+    transition-delay: 300ms;
+}
+
+.mb-nav-link > a{
+    text-decoration: none;
+    font-family: var(--Poppins);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--100-blue);
+}
+.mb-nav-link:hover{
+    background: var(--blue-bg-gradient-hover) !important;
+}
+.p-header{
+    font-family: var(--Poppins);
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--Black-ever);
+}
+h1 > .span-header{
+    font-family: var(--Nunito);
+    font-size: 47px;
+    color: var(--100-blue);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.p-info{
+    font-family: var(--Poppins);
+    font-size: 22px;
+    font-weight: 400;
+    padding-top: 25px;
+}
+.letsEnjoyBtn{
+    padding: 10px 30px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--blue-bg-gradient);
+    box-shadow:2px 4px 8px var(--blue-shadow);
+}
+.letsEnjoyBtn > a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: var(--Poppins);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--100-blue);
+}
+.letsEnjoyBtn:hover{
+    background-color: var(--blue-bg-gradient-hover);
+}
+.letsEnjoyBtn.clicked{
+    transform: scale(.95);
+}
+.icons{
+    cursor: pointer;
+}
+.fa-facebook-f{
+    font-size: 25px;
+}
+.fa-instagram{
+    font-size: 30px;
+}
+.fa-twitter, .fa-youtube{
+    font-size: 30px;
+}
+.fa-facebook-f:hover{
+    color: blue;
+}
+.fa-instagram:hover{
+    color: orangered;
+}
+.fa-twitter:hover{
+    color:#10e9e9;
+}
+.fa-youtube:hover{
+    color:red;
+}
+.fa-arrow-right{
+    color: var(--100-blue);
+    font-size: 15px;
+    animation: move 1s linear 1s infinite;
+}
+@keyframes move {
+    0% {transform:  translateX(0px);}
+    50%{transform: translateX(30px);}
+    100%{transform: translateX(50px);}
+}
+.dance{
+    width: 400px;
+    height: 400px;
+    position: relative;
+    z-index: 1;
+}
+.blue-ball{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    animation: ballBlue 4s linear 1s infinite;
+}
+@keyframes ballBlue {
+    0%{transform: translateX(0px)}
+    30%{transform: translateX(50px)}
+    50%{transform: translateY(30px)}
+    80%{transform: translateY(50px)}
+    100%{transform: translate(0px);}
+}
+.yellow-ball{
+    position: absolute;
+    top: 0;
+    right: 100px;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    animation: ballYellow 4s linear 1s infinite;
+}
+@keyframes ballYellow {
+    0%{transform: translateX(0px)}
+    30%{transform: translateX(-50px)}
+    50%{transform: translateY(30px)}
+    80%{transform: translateY(-50px)}
+    100%{transform: translate(0px);}
+}
+.red-ball{
+    position: absolute;
+    left: 40px;
+    bottom:-30px;
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    animation: ballRed 4s linear 1s infinite;
+}
+@keyframes ballRed {
+    0%{transform: translateX(0px)}
+    30%{transform: translateX(80px)}
+    50%{transform: translateY(30px)}
+    80%{transform: translateY(-50px)}
+    100%{transform: translate(0px);}
+}
+
+.sign-up{
+    width: 0;
+    height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--blue-bg-gradient-5per);
+    z-index: 99;
+}
+.sign-up.show{
+    width: 100%;
+    height: 100vh;
+}
+
+.sign-up-page{
+    width: 450px;
+    background: var(--white);
+    border-radius: 5px;
+}
+.sign-up-head{
+    display: block;
+    font-family: var(--Nunito);
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--100-blue);
+    text-transform: uppercase;
+}
+.sign-up-head-info{
+    font-family: var(--Poppins);
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.username, .email, .password{
+    display: block;
+    font-family: var(--Poppins);
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--Black-ever);
+}
+#username, #email, #password{
+    width: 300px;
+    height: 50px;
+    border: none;
+    border-bottom: 2px solid var(--100-blue);
+    outline: none;
+    background-color: var(--blue-bg-gradient-hover);
+    text-indent: 10px;
+}
+#username::placeholder, #email::placeholder, #password::placeholder{
+    font-family: var(--Poppins);
+    font-size: 18px;
+    text-transform: capitalize;
+    color: var(--gray);
+    text-indent: 10px;
+}
+.message-username-invalid, .message-email-invalid , .message-password-invalid, .message-password-invalid-info{
+    font-family: var(--Poppins);
+    font-size: 13px;
+    color: red;
+    font-weight: 400;
+    display: none;
+}
+.message-username-invalid.message, .message-email-invalid.message, .message-password-invalid.message, .message-password-invalid-info.message{
+    display: block;
+}
+.message-username-valid, .message-email-valid , .message-password-valid{
+    font-family: var(--Poppins);
+    font-size: 13px;
+    color: green;
+    font-weight: 400;
+    display: none;
+}
+.message-username-valid.message, .message-email-valid.message, .message-password-valid.message{
+    display: block;
+}
+.noti-user, .noti-email{
+    color: red;
+    display: none;
+}
+.noti-pass{
+    color: red;
+    display: none;
+}
+.noti-user.message, .noti-email.message, .noti-pass.message{
+    color: red;
+    display: inline;
+}
+
+.create-acc{
+    width: 300px;
+    height: 50px;
+    background-color: var(--100-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+}
+.create-acc:hover{
+    background-color: var(--blue-bg-slider);
+}
+.create-acc.clicked{
+    transform: scale(.95);
+}
+
+.fa-person-walking-arrow-right{
+    cursor: pointer;
+    font-size: 28px;
+}
+.fa-person-walking-arrow-right.clicked{
+    transform: scale(.95);
+}
+.sliderssss{
+    width: 450px;
+    height: auto;
+    background: var(--blue-bg-slider);
+    border-radius: 5px;
+}
+.card{
+    background: none;
+    width: 300px;
+}
+.log-in{
+    width: 300px;
+    height: 50px;
+    background-color: var(--white);
+    color: var(--black-90);
+    border: 2px solid var(--100-blue);
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 10px;
+    transform-origin: center;
+}
+.log-in.clicked{
+    transform: scale(.95);
+}
+.google-logo{
+    width: 26px;
+    height: 26px;
+}
+
+.log-in-with{
+    font-size: 15px;
+    font-weight: 600;
+}
+.loader{
+    width: 0;
+    height: 0;
+    position: fixed;
+    z-index: -9999;
+    background:#f8f8f8;
+}
+.loader.show{
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+}
+.loader-gif{
+    width: 300px;
+    height: 300px;
+}
+
+.showingSuccessful{
+    width: 0;
+    height: 0;
+    background: none;
+    position: fixed;
+    z-index: -999;
+}
+.card{
+    border-radius: 8px !important;
+}
+.complete{
+    width: 200px;
+    height: 200px;
+}
+.showingSuccessful.show{
+    z-index: 999;
+    width: 100%;
+    height: 100vh;
+}
+
+.vector-my-app{
+    width: 350px;
+    height: 350px;
+}
+
+.vector-info{
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 300;
+}
+.bar1, .bar2, .bar3{
+    width: 40px;
+    height: 4px;
+    background: var(--gray);
+}
+
+.bar1.show{
+    background: var(--Black-ever);
+}
+.bar2.show{
+    background: var(--Black-ever)
+}
+.bar3.show{
+    background: var(--Black-ever);
+}
+.Myprofile{
+    width: 0;
+    overflow: hidden;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--white);
+    z-index: -99999;
+    opacity: 0;
+}
+.mycard{
+    border-radius: 10px;
+}
+
+.Myprofile.show{
+    width: 100%;
+    opacity: 1;
+    z-index: 99999;
+}
+
+.profile {
+    width: 100px;
+    height: 100px;
+}
+
+.close-profile{
+    width: 30px;
+    height: 30px;
+    left: 10px;
+    top: 10px;
+    opacity: .3;
+    cursor: pointer;
+}
+.close-profile:hover{
+    opacity: 1;
+}
