@@ -3,7 +3,7 @@ let songs = [
         number: '01',
         image: '/assets/songimage/despacito.jpg',
         name: 'Despacito',
-        Artist: "Luis Fonsi",
+        Artist: "Justin Bieber",
         Released: 2017,
         path: '/assets/songs/Justin_Bieber_–_Despacito_(Lyrics)_🎤_ft._Luis_Fonsi_&_Daddy_Yankee_[Pop](128k).mp3'
     },
@@ -27,7 +27,7 @@ let songs = [
         number: '04',
         image: '/assets/songimage/stay.jpg',
         name: 'Stay',
-        Artist: "Justin Bieber, The Kid LAROI",
+        Artist: "Justin Bieber",
         Released: 2020,
         path: '/assets/songs/The_Kid_LAROI,_Justin_Bieber_-_STAY_(Official_Video)(128k).mp3'
     },
@@ -107,7 +107,9 @@ const repeatBtn = document.querySelector('.repeatBtn')
 const currentTime = document.querySelector('.currentTime')
 const totalTime = document.querySelector('.totalTime')
 const searchBtn = document.querySelector('.srch-btn')
-
+const filterBtn = document.querySelector('.filter')
+const dropdownBtn = document.querySelector('.dropdown-btn')
+const dropdown_links = document.querySelectorAll('.d-link')
 
 
 
@@ -133,6 +135,7 @@ const removeGif = () => {
 
 const audioTag = document.createElement("audio")
 let sortMusic = songs.sort((a, b) => a.Artist.localeCompare(b.Artist))
+console.log(sortMusic)
 let currentIndex = 0;
 let is_playing = false;
 let is_clicked = false;
@@ -141,8 +144,7 @@ let shuffling = 0;
 let autoPlay = 0;
 let repeat = 0;
 
-
-
+let index = 0;
 
 for (let i = 0; i < songs.length; i++) {
     const playlistDiv = document.createElement('div')
@@ -174,9 +176,6 @@ for (let i = 0; i < songs.length; i++) {
     playlistDiv.append(firstItem, secondItem)
     container.append(playlistDiv)
 
-    
-
-
     playlistDiv.addEventListener('click', () => {
         is_clicked = true;
         is_playing = true;
@@ -195,10 +194,88 @@ for (let i = 0; i < songs.length; i++) {
     timer = setInterval(range_slider, 1000)
 }
 
+
+dropdown_links.forEach(ele => {
+        ele.addEventListener('click', () => {
+            
+                let uploader = (songss) => {
+                    if (songss.Artist === ele.textContent){
+                        for (let i = 0; i < songss.length; i++) {
+                            const playlistDiv = document.createElement('div')
+                            playlistDiv.classList.add('playlist', 'mt-1', 'd-flex', 'align-items-center', 'justify-content-between', 'px-3')
+                            const firstItem = document.createElement('div');
+                            firstItem.classList.add('d-flex', 'align-items-center');
+                            const secondItem = document.createElement('div');
+                            secondItem.classList.add('d-flex', 'align-items-center', 'justify-content-center', 'px-3');
+                            const imgTag = document.createElement('img')
+                            imgTag.classList.add('song-img', 'me-3', 'rounded-1')
+                            imgTag.src= songss[i].image;
+                            const titleTag = document.createElement('div')
+                            titleTag.classList.add('title', 'px-3', 'text-end')
+                            titleTag.textContent = songss[i].name;
+                            const durationTag = document.createElement('div')
+                            durationTag.classList.add('me-2', "me-md-5")
+                            durationTag.textContent = "00:00"
+                            const firstImage = document.createElement('img')
+                            firstImage.classList.add('icon-png', "me-3")
+                            firstImage.src = "/assets/img/heart.png";
+                            const secondImage = document.createElement('img')
+                            secondImage.classList.add('icon-png', "me-3")
+                            secondImage.src = "/assets/img/cloud-computing.png"
+                            const thirdImage = document.createElement('img')
+                            thirdImage.classList.add('icon-png')
+                            thirdImage.src = "/assets/img/share.png"
+                            firstItem.append(imgTag, titleTag)
+                            secondItem.append(  durationTag, firstImage, secondImage, thirdImage)
+                            playlistDiv.append(firstItem, secondItem)
+                            container.append(playlistDiv)
+
+                            playlistDiv.addEventListener('click', () => {
+                                is_clicked = true;
+                                is_playing = true;
+                                audioTag.src = songss[i].path;
+                                recentImg.src = songss[i].image;
+                                title.textContent = songss[i].name;
+                                artist.textContent = songss[i].Artist;
+                                if (is_clicked === true) {
+                                    currentIndex = i;
+                                } if (is_playing === true) {
+                                    playIcon.classList.add('show')
+                                    pauseIcon.classList.add('show')
+                                }
+                                audioTag.play();
+                            })
+                            timer = setInterval(range_slider, 1000)
+                            }
+                        
+                        }
+                        console.log("song artist" + songss)
+                    }
+                    uploader(sortMusic)
+                
+                
+                console.log(ele.textContent)
+            })
+    })
+
+
+
+// Filter
+
+filterBtn.addEventListener("click", () => {
+    dropdownBtn.classList.toggle('show')
+})
+
+
+
+// Changing Volume
+
 volumeIcon.addEventListener('click', () =>{
     volume_Bar.classList.toggle('show')
     volume_Slider.classList.toggle('show')
 })
+
+// Opening Shuffle Button
 
 shuffleBtn.addEventListener('click', () => {
     if (shuffling == 1){
@@ -218,6 +295,9 @@ shuffleBtn.addEventListener('click', () => {
     }
     console.log("shuffle is" + shuffling + "and autoPlay is" + autoPlay + "repeat is " + repeat)
 })
+
+// Opening AutoPlay Button
+
 autoPlayBtn.addEventListener("click", ()=> {
     if (autoPlay == 1) {
         autoPlay = 0;
@@ -236,6 +316,9 @@ autoPlayBtn.addEventListener("click", ()=> {
     }
     console.log("autoplay is " + autoPlay + "and shuffling is " + shuffling + "repeat is " + repeat)
 })
+
+// Opening Repeat Button
+
 repeatBtn.addEventListener("click", ()=> {
     if (repeat == 1) {
         repeat = 0;
@@ -255,7 +338,7 @@ repeatBtn.addEventListener("click", ()=> {
     console.log("repeat is " + repeat + "and shuffling is " + shuffling + "autoplay is " + autoPlay)
 })
 
-
+// Play Button
 
 playBtn.addEventListener('click', () => {
     if (is_playing === false){
@@ -270,6 +353,8 @@ playBtn.addEventListener('click', () => {
     }
 })
 
+// Function of play button
+
 function playSong() {
     let audioTrack = songs[currentIndex].path;
     audioTag.src = audioTrack;
@@ -282,6 +367,8 @@ function playSong() {
     audioTag.play();
 }
 
+// Showing Total Duration of a Song
+
 audioTag.addEventListener('loadeddata', () => {
     let minText = Math.floor(audioTag.duration / 60)
     let secondText = Math.floor(audioTag.duration % 60)
@@ -290,6 +377,8 @@ audioTag.addEventListener('loadeddata', () => {
     let timeTotal = minResult + ":" + secondResult
     totalTime.textContent = timeTotal;
 })
+
+// Showing Current Time updating of a Song
 
 audioTag.addEventListener('timeupdate', () => {
     let minText = Math.floor(audioTag.currentTime / 60)
@@ -300,6 +389,8 @@ audioTag.addEventListener('timeupdate', () => {
     currentTime.textContent = currentTotal
 })
 
+// Function of a play Button
+
 function playCurrentSong() {
     playIcon.classList.add('show')
     pauseIcon.classList.add('show')
@@ -307,12 +398,16 @@ function playCurrentSong() {
     audioTag.play();
 }
 
+// Function of a play Button
+
 function pauseSong() {
     playIcon.classList.remove('show');
     pauseIcon.classList.remove('show');
     is_playing = false;
     audioTag.pause();
 }
+
+// Changing the volume of a Song
 
 function changevolume() {
     let realVolume;
@@ -325,10 +420,14 @@ function changevolume() {
     recentVolume.innerHTML = realVolume;
 }
 
+// Changing the duration of a song
+
 function changingDuration() {
     slider_position = audioTag.duration * (progressBar.value / 100)
     audioTag.currentTime = slider_position
 }
+
+// Next Button
 
 nextBtn.addEventListener('click', () => {
     if (currentIndex < songs.length - 1) {
@@ -340,6 +439,8 @@ nextBtn.addEventListener('click', () => {
     }
 })
 
+// previous Button
+
 prevBtn.addEventListener('click', () => {
     if (currentIndex < 0) {
         currentIndex = songs.length -1;
@@ -349,6 +450,8 @@ prevBtn.addEventListener('click', () => {
         playSong();
     }
 })
+
+// range of duration slider of a song and function repeat, random, and autoplay Button
 
 function range_slider() {
     let position = 0;

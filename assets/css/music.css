@@ -487,4 +487,37 @@ body{
     height: 30px;
 }
 
+.dropdown-btn{
+    position: fixed;
+    z-index: -10;
+    box-shadow: 1px 1px 3px var(--black-90);
+    overflow: hidden;
+    border-radius: 5px;
+    font-family: var(--Poppins);
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    display : none;
+    visibility: hidden;
+}
+
+.dropdown-btn.show{
+    display: block;
+    z-index: 10;
+    visibility: visible;
+}
+
+.d-link{
+    padding: 7px 20px;
+    cursor: pointer;
+    background: var(--white);
+    font-family: var(--Poppins);
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--gray);
+}
+.d-link:hover{
+    color: var(--Black-ever);
+}
 
