@@ -19,9 +19,9 @@
     --gray: #c4c4c4;
     --black-90: #434343;
 }
-
 body{
     user-select: none;
+    overflow: hidden;
 }
 
 .logo{
