@@ -22,7 +22,7 @@
 
 body{
     user-select: none;
-    overflow: hidden;
+    height : auto;
 }
 
 .logo{

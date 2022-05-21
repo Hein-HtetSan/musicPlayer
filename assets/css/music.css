@@ -21,7 +21,6 @@
 }
 body{
     user-select: none;
-    overflow: hidden;
 }
 
 .logo{
@@ -489,7 +488,7 @@ body{
 
 .dropdown-btn{
     position: fixed;
-    z-index: -10;
+    z-index: -1000000;
     box-shadow: 1px 1px 3px var(--black-90);
     overflow: hidden;
     border-radius: 5px;
@@ -503,7 +502,7 @@ body{
 
 .dropdown-btn.show{
     display: block;
-    z-index: 10;
+    z-index: 10000;
     visibility: visible;
 }
 
