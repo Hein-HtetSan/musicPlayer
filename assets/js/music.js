@@ -1,25 +1,25 @@
 let songs = [
     {
         number: '01',
-        image: '../assets/songimage/despacito.jpg',
+        image: '/assets/songimage/despacito.jpg',
         name: 'Despacito',
         Artist: "Justin Bieber",
         Released: 2017,
         duration: "03:50",
-        path: '../assets/songs/Justin_Bieber_–_Despacito_(Lyrics)_🎤_ft._Luis_Fonsi_&_Daddy_Yankee_[Pop](128k).mp3'
+        path: '/assets/songs/Justin_Bieber_–_Despacito_(Lyrics)_🎤_ft._Luis_Fonsi_&_Daddy_Yankee_[Pop](128k).mp3'
     },
     {
         number: '02',
-        image: '../assets/songimage/shapeOfU.jpg',
+        image: '/assets/songimage/shapeOfU.jpg',
         name: 'Shape of You',
         Artist: " Ed Sheeran",
         Released: 2017,
         duration: "04:00",
-        path: '../assets/songs/Ed_Sheeran_-_Shape_of_You_(Lyrics)(128k).mp3'
+        path: '/assets/songs/Ed_Sheeran_-_Shape_of_You_(Lyrics)(128k).mp3'
     },
     {
         number: '03',
-        image: '../assets/songimage/ImTheOne.jpg',
+        image: '/assets/songimage/ImTheOne.jpg',
         name: "I'm the One",
         Artist: " DJ Khaled",
         Released: 2017,
@@ -37,7 +37,7 @@ let songs = [
     },
     {
         number: '05',
-        image: '../assets/songimage/yummy.jpg',
+        image: '/assets/songimage/yummy.jpg',
         name: 'Yummy',
         Artist: "Justin Bieber",
         Released: 2020,
@@ -174,13 +174,13 @@ for (let i = 0; i < songs.length; i++) {
     durationTag.textContent = songs[i].duration
     const firstImage = document.createElement('img')
     firstImage.classList.add('icon-png', "me-3")
-    firstImage.src = "/assets/img/heart.png";
+    firstImage.src = "./assets/img/heart.png";
     const secondImage = document.createElement('img')
     secondImage.classList.add('icon-png', "me-3")
-    secondImage.src = "/assets/img/cloud-computing.png"
+    secondImage.src = "./assets/img/cloud-computing.png"
     const thirdImage = document.createElement('img')
     thirdImage.classList.add('icon-png')
-    thirdImage.src = "/assets/img/share.png"
+    thirdImage.src = "./assets/img/share.png"
     firstItem.append(imgTag, titleTag)
     secondItem.append(  durationTag, firstImage, secondImage, thirdImage)
     playlistDiv.append(firstItem, secondItem)
