@@ -25,6 +25,11 @@ body{
     height : auto;
 }
 
+.animation{
+    width: auto;
+    height: 80vh;
+}
+
 .logo{
     width: 50px;
     height: 50px;
@@ -173,13 +178,13 @@ body{
 
 .upperBlock.rotateBlock{
     transform-origin: left;
-    transform: rotate(45deg);
+    transform: rotate(43deg);
     width: 36px;
 }
 
 .lowerBlock.rotateBlock {
     transform-origin: left;
-    transform: rotate(-45deg);
+    transform: rotate(-43deg);
     width: 36px;
 }
 
@@ -450,7 +455,7 @@ h1 > .span-header{
     color: var(--Black-ever);
 }
 #username, #email, #password{
-    width: 300px;
+    width: 100%;
     height: 50px;
     border: none;
     border-bottom: 2px solid var(--100-blue);
@@ -499,7 +504,7 @@ h1 > .span-header{
 }
 
 .create-acc{
-    width: 300px;
+    width: 100%;
     height: 50px;
     background-color: var(--100-blue);
     color: var(--white);
@@ -531,7 +536,7 @@ h1 > .span-header{
     width: 300px;
 }
 .log-in{
-    width: 300px;
+    width: 100%;
     height: 50px;
     background-color: var(--white);
     color: var(--black-90);

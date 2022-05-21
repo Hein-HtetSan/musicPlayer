@@ -5,6 +5,7 @@ let songs = [
         name: 'Despacito',
         Artist: "Justin Bieber",
         Released: 2017,
+        duration: "03:50",
         path: '../assets/songs/Justin_Bieber_–_Despacito_(Lyrics)_🎤_ft._Luis_Fonsi_&_Daddy_Yankee_[Pop](128k).mp3'
     },
     {
@@ -13,6 +14,7 @@ let songs = [
         name: 'Shape of You',
         Artist: " Ed Sheeran",
         Released: 2017,
+        duration: "04:00",
         path: '../assets/songs/Ed_Sheeran_-_Shape_of_You_(Lyrics)(128k).mp3'
     },
     {
@@ -21,6 +23,7 @@ let songs = [
         name: "I'm the One",
         Artist: " DJ Khaled",
         Released: 2017,
+        duration: "04:52",
         path: "../assets/songs/ImtheOne.mp3"
     },
     {
@@ -29,6 +32,7 @@ let songs = [
         name: 'Stay',
         Artist: "Justin Bieber",
         Released: 2020,
+        duration: "02:37",
         path: '/assets/songs/The_Kid_LAROI,_Justin_Bieber_-_STAY_(Official_Video)(128k).mp3'
     },
     {
@@ -37,6 +41,7 @@ let songs = [
         name: 'Yummy',
         Artist: "Justin Bieber",
         Released: 2020,
+        duration: "03:23",
         path: '/assets/songs/Justin_Bieber_-_Yummy_(Lyrics)(128k).mp3'
     },
     {
@@ -45,6 +50,7 @@ let songs = [
         name: 'The Lazy Song',
         Artist: "Bruno Mars",
         Released: 200,
+        duration: "03:54",
         path: '/assets/songs/The_Lazy_Song_-_Bruno_Mars_(Lyrics)_🎵(128k).mp3'
     },
     {
@@ -53,6 +59,7 @@ let songs = [
         name: 'Wolves',
         Artist: "Selena Gomez",
         Released: 200,
+        duration: "03:32",
         path: '/assets/songs/Selena_Gomez,_Marshmello_-_Wolves(128k).mp3'
     },
     {
@@ -61,6 +68,7 @@ let songs = [
         name: 'Who says',
         Artist: "Selena Gomez",
         Released: 200,
+        duration: "03:20",
         path: '/assets/songs/Selena_Gomez_&_The_Scene_-_Who_Says(128k).mp3'
     },
     {
@@ -69,6 +77,7 @@ let songs = [
         name: 'My Dilemma',
         Artist: "Selena Gomez",
         Released: 200,
+        duration: '03:22',
         path: '/assets/songs/Selena_Gomez_-_My_Dilemma_(Music_video)(128k).mp3'
     },
     {
@@ -77,6 +86,7 @@ let songs = [
         name: 'The heart whats what it wants',
         Artist: "Selena Gomez",
         Released: 200,
+        duration: "04:35",
         path: '/assets/songs/Selena_Gomez_-_The_Heart_Wants_What_It_Wants_(Official_Video)(128k).mp3'
     },
 ]
@@ -152,7 +162,7 @@ for (let i = 0; i < songs.length; i++) {
     const firstItem = document.createElement('div');
     firstItem.classList.add('d-flex', 'align-items-center');
     const secondItem = document.createElement('div');
-    secondItem.classList.add('d-flex', 'align-items-center', 'justify-content-center', 'px-3');
+    secondItem.classList.add('d-flex', 'align-items-center', 'justify-content-center', 'px-3', "d-none", "d-md-block", "d-lg-block");
     const imgTag = document.createElement('img')
     imgTag.classList.add('song-img', 'me-3', 'rounded-1')
     imgTag.src= songs[i].image;
@@ -160,8 +170,8 @@ for (let i = 0; i < songs.length; i++) {
     titleTag.classList.add('title', 'px-3', 'text-end')
     titleTag.textContent = songs[i].name;
     const durationTag = document.createElement('div')
-    durationTag.classList.add('me-2', "me-md-5")
-    durationTag.textContent = "00:00"
+    durationTag.classList.add('me-2', "me-md-5", "d-block")
+    durationTag.textContent = songs[i].duration
     const firstImage = document.createElement('img')
     firstImage.classList.add('icon-png', "me-3")
     firstImage.src = "/assets/img/heart.png";
