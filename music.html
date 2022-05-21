@@ -107,24 +107,23 @@
         <div class="row">
             <div class="col-12 col-md-12 col-lg-7 px-3 px-md-3 ">
 
-                <div class="playlist-container py-2">
+                <div class="playlist-container py-2 mb-5">
                     
                 </div>
             </div>
-            <div class="col-12 col-md-12 col-lg-5 px-3 mt-4 mt-mb-0 mt-lg-0 mb-5 mb-md-0 py-2 position-sticky overflow-hidden">
-                <div class="field px-5 d-flex flex-column align-items-center justify-content-center py-4">
+            <div class="col-12 col-md-12 col-lg-5 px-3 mt-4 mt-mb-0 mt-lg-0 mb-5 mb-md-0 py-2 position-sticky overflow-hidden section-music d-none d-md-none d-lg-none">
+                <div class="field px-2 d-flex flex-column align-items-center justify-content-center py-4">
                     <img src="" class="recent-img" alt="">
                     <p class="recent-title mt-3 text-center"></p>
                     <p class="recent-artist text-center"></p>
-                    <div class="detail d-flex align-items-center justify-content-center">
-                        <div class="currentTime me-2 me-md-3"></div>
-                        <input type="range" name="" id="progressBar" class="me-2 me-md-3" min="0" max="100" value="0" onchange="changingDuration()">
-                        <div class="totalTime"></div>
+                    <div class="detail d-flex align-items-center justify-content-center flex-column flex-md-row">
+                        <div class="currentTime   me-md-3"></div>
+                        <input type="range" name="" id="progressBar" class="mt-2 mt-md-0 me-md-3" min="0" max="100" value="0" onchange="changingDuration()">
+                        <div class="totalTime mt-2 mb-2 mb-md-0 mt-md-0"></div>
                     </div>
                     <div class="w-100 d-flex align-items-center justify-content-between mt-2">
-                        <div class="d-flex align-items-center me-3">
+                        <div class="d-flex align-items-center">
                             <div class="repeatBtn">
-
                                 <img src="./assets/img/repeat-once.png" class="icon-png me-3" alt="">
                             </div>
                             <div class="shuffleBtn">
@@ -134,7 +133,7 @@
                                 <img src="./assets/img/repeat.png" class="icon-png" alt="">
                             </div>
                         </div>
-                        <div class="controls d-flex align-items-center justify-content-center  me-3">
+                        <div class="controls d-flex align-items-center justify-content-center ">
                             <img src="./assets/img/previous.png" class="icon-png me-4 prevBtn" alt="">
                             <button class="control me-4 d-flex align-items-center justify-content-center ">
                                 <img src="./assets/img/play (1).png" alt="" class="icon-png playBtn">
@@ -154,6 +153,14 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <!--Container-->
+    <div class="container-fluid position-fixed fixed-bottom Mb-music d-block d-lg-none d-flex align-items-center justify-content-center">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-1 d-flex">
+                
             </div>
         </div>
     </div>

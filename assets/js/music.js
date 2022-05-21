@@ -1,12 +1,12 @@
 let songs = [
     {
         number: '01',
-        image: '../songimage/despacito.jpg',
+        image: './assets/songimage/despacito.jpg',
         name: 'Despacito',
         Artist: "Justin Bieber",
         Released: 2017,
         duration: "03:50",
-        path: '../songs/Justin_Bieber_–_Despacito_(Lyrics)_🎤_ft._Luis_Fonsi_&_Daddy_Yankee_[Pop](128k).mp3'
+        path: './assets/songs/Justin_Bieber_–_Despacito_(Lyrics)_🎤_ft._Luis_Fonsi_&_Daddy_Yankee_[Pop](128k).mp3'
     },
     {
         number: '02',
@@ -120,6 +120,7 @@ const searchBtn = document.querySelector('.srch-btn')
 const filterBtn = document.querySelector('.filter')
 const dropdownBtn = document.querySelector('.dropdown-btn')
 const dropdown_links = document.querySelectorAll('.d-link')
+const sectionMusic = document.querySelector('.section-music')
 
 
 
@@ -144,8 +145,8 @@ const removeGif = () => {
 }
 
 const audioTag = document.createElement("audio")
-let sortMusic = songs.sort((a, b) => a.Artist.localeCompare(b.Artist))
-console.log(sortMusic)
+
+
 let currentIndex = 0;
 let is_playing = false;
 let is_clicked = false;
@@ -167,7 +168,7 @@ for (let i = 0; i < songs.length; i++) {
     imgTag.classList.add('song-img', 'me-3', 'rounded-1')
     imgTag.src= songs[i].image;
     const titleTag = document.createElement('div')
-    titleTag.classList.add('title', 'px-3', 'text-end')
+    titleTag.classList.add('title', 'px-3', 'text-start')
     titleTag.textContent = songs[i].name;
     const durationTag = document.createElement('div')
     durationTag.classList.add('me-2', "me-md-5", "d-block")
@@ -187,6 +188,8 @@ for (let i = 0; i < songs.length; i++) {
     container.append(playlistDiv)
 
     playlistDiv.addEventListener('click', () => {
+        sectionMusic.classList.add('d-lg-block')
+        sectionMusic.classList.remove('d-lg-none')
         is_clicked = true;
         is_playing = true;
         audioTag.src = songs[i].path;
@@ -205,68 +208,6 @@ for (let i = 0; i < songs.length; i++) {
 }
 
 
-dropdown_links.forEach(ele => {
-        ele.addEventListener('click', () => {
-            
-                let uploader = (songss) => {
-                    if (songss.Artist === ele.textContent){
-                        for (let i = 0; i < songss.length; i++) {
-                            const playlistDiv = document.createElement('div')
-                            playlistDiv.classList.add('playlist', 'mt-1', 'd-flex', 'align-items-center', 'justify-content-between', 'px-3')
-                            const firstItem = document.createElement('div');
-                            firstItem.classList.add('d-flex', 'align-items-center');
-                            const secondItem = document.createElement('div');
-                            secondItem.classList.add('d-flex', 'align-items-center', 'justify-content-center', 'px-3');
-                            const imgTag = document.createElement('img')
-                            imgTag.classList.add('song-img', 'me-3', 'rounded-1')
-                            imgTag.src= songss[i].image;
-                            const titleTag = document.createElement('div')
-                            titleTag.classList.add('title', 'px-3', 'text-end')
-                            titleTag.textContent = songss[i].name;
-                            const durationTag = document.createElement('div')
-                            durationTag.classList.add('me-2', "me-md-5")
-                            durationTag.textContent = "00:00"
-                            const firstImage = document.createElement('img')
-                            firstImage.classList.add('icon-png', "me-3")
-                            firstImage.src = "/assets/img/heart.png";
-                            const secondImage = document.createElement('img')
-                            secondImage.classList.add('icon-png', "me-3")
-                            secondImage.src = "/assets/img/cloud-computing.png"
-                            const thirdImage = document.createElement('img')
-                            thirdImage.classList.add('icon-png')
-                            thirdImage.src = "/assets/img/share.png"
-                            firstItem.append(imgTag, titleTag)
-                            secondItem.append(  durationTag, firstImage, secondImage, thirdImage)
-                            playlistDiv.append(firstItem, secondItem)
-                            container.append(playlistDiv)
-
-                            playlistDiv.addEventListener('click', () => {
-                                is_clicked = true;
-                                is_playing = true;
-                                audioTag.src = songss[i].path;
-                                recentImg.src = songss[i].image;
-                                title.textContent = songss[i].name;
-                                artist.textContent = songss[i].Artist;
-                                if (is_clicked === true) {
-                                    currentIndex = i;
-                                } if (is_playing === true) {
-                                    playIcon.classList.add('show')
-                                    pauseIcon.classList.add('show')
-                                }
-                                audioTag.play();
-                            })
-                            timer = setInterval(range_slider, 1000)
-                            }
-                        
-                        }
-                        console.log("song artist" + songss)
-                    }
-                    uploader(sortMusic)
-                
-                
-                console.log(ele.textContent)
-            })
-    })
 
 
 
