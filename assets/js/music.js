@@ -25,11 +25,11 @@ let songs = [
     },
     {
         number: '04',
-        image: '../assets/songimage/stay.jpg',
+        image: '/assets/songimage/stay.jpg',
         name: 'Stay',
         Artist: "Justin Bieber",
         Released: 2020,
-        path: '../assets/songs/The_Kid_LAROI,_Justin_Bieber_-_STAY_(Official_Video)(128k).mp3'
+        path: '/assets/songs/The_Kid_LAROI,_Justin_Bieber_-_STAY_(Official_Video)(128k).mp3'
     },
     {
         number: '05',
@@ -37,47 +37,47 @@ let songs = [
         name: 'Yummy',
         Artist: "Justin Bieber",
         Released: 2020,
-        path: '../assets/songs/Justin_Bieber_-_Yummy_(Lyrics)(128k).mp3'
+        path: '/assets/songs/Justin_Bieber_-_Yummy_(Lyrics)(128k).mp3'
     },
     {
         number: '06',
-        image: '../assets/songimage/thelazysong.jpg',
+        image: '/assets/songimage/thelazysong.jpg',
         name: 'The Lazy Song',
         Artist: "Bruno Mars",
         Released: 200,
-        path: '../assets/songs/The_Lazy_Song_-_Bruno_Mars_(Lyrics)_🎵(128k).mp3'
+        path: '/assets/songs/The_Lazy_Song_-_Bruno_Mars_(Lyrics)_🎵(128k).mp3'
     },
     {
         number: '07',
-        image: '../assets/songimage/thelazysong.jpg',
+        image: '/assets/songimage/thelazysong.jpg',
         name: 'Wolves',
         Artist: "Selena Gomez",
         Released: 200,
-        path: '../assets/songs/Selena_Gomez,_Marshmello_-_Wolves(128k).mp3'
+        path: '/assets/songs/Selena_Gomez,_Marshmello_-_Wolves(128k).mp3'
     },
     {
         number: '07',
-        image: '../assets/songimage/thelazysong.jpg',
+        image: '/assets/songimage/thelazysong.jpg',
         name: 'Who says',
         Artist: "Selena Gomez",
         Released: 200,
-        path: '../assets/songs/Selena_Gomez_&_The_Scene_-_Who_Says(128k).mp3'
+        path: '/assets/songs/Selena_Gomez_&_The_Scene_-_Who_Says(128k).mp3'
     },
     {
         number: '07',
-        image: '../assets/songimage/thelazysong.jpg',
+        image: '/assets/songimage/thelazysong.jpg',
         name: 'My Dilemma',
         Artist: "Selena Gomez",
         Released: 200,
-        path: '../assets/songs/Selena_Gomez_-_My_Dilemma_(Music_video)(128k).mp3'
+        path: '/assets/songs/Selena_Gomez_-_My_Dilemma_(Music_video)(128k).mp3'
     },
     {
         number: '07',
-        image: '../assets/songimage/thelazysong.jpg',
+        image: '/assets/songimage/thelazysong.jpg',
         name: 'The heart whats what it wants',
         Artist: "Selena Gomez",
         Released: 200,
-        path: '../assets/songs/Selena_Gomez_-_The_Heart_Wants_What_It_Wants_(Official_Video)(128k).mp3'
+        path: '/assets/songs/Selena_Gomez_-_The_Heart_Wants_What_It_Wants_(Official_Video)(128k).mp3'
     },
 ]
 const Block = document.querySelector('.blocks')
