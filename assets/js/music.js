@@ -1,93 +1,93 @@
 let songs = [
     {
         number: '01',
-        image: '/assets/songimage/despacito.jpg',
+        image: './assets/songimage/despacito.jpg',
         name: 'Despacito',
         Artist: "Justin Bieber",
         Released: 2017,
         duration: "03:50",
-        path: '/assets/songs/Justin_Bieber_–_Despacito_(Lyrics)_🎤_ft._Luis_Fonsi_&_Daddy_Yankee_[Pop](128k).mp3'
+        path: './assets/songs/Justin_Bieber_–_Despacito_(Lyrics)_🎤_ft._Luis_Fonsi_&_Daddy_Yankee_[Pop](128k).mp3'
     },
     {
         number: '02',
-        image: '/assets/songimage/shapeOfU.jpg',
+        image: './assets/songimage/shapeOfU.jpg',
         name: 'Shape of You',
         Artist: " Ed Sheeran",
         Released: 2017,
         duration: "04:00",
-        path: '/assets/songs/Ed_Sheeran_-_Shape_of_You_(Lyrics)(128k).mp3'
+        path: './assets/songs/Ed_Sheeran_-_Shape_of_You_(Lyrics)(128k).mp3'
     },
     {
         number: '03',
-        image: '/assets/songimage/ImTheOne.jpg',
+        image: './assets/songimage/ImTheOne.jpg',
         name: "I'm the One",
         Artist: " DJ Khaled",
         Released: 2017,
         duration: "04:52",
-        path: "../assets/songs/ImtheOne.mp3"
+        path: "./assets/songs/ImtheOne.mp3"
     },
     {
         number: '04',
-        image: '/assets/songimage/stay.jpg',
+        image: './assets/songimage/stay.jpg',
         name: 'Stay',
         Artist: "Justin Bieber",
         Released: 2020,
         duration: "02:37",
-        path: '/assets/songs/The_Kid_LAROI,_Justin_Bieber_-_STAY_(Official_Video)(128k).mp3'
+        path: './assets/songs/The_Kid_LAROI,_Justin_Bieber_-_STAY_(Official_Video)(128k).mp3'
     },
     {
         number: '05',
-        image: '/assets/songimage/yummy.jpg',
+        image: './assets/songimage/yummy.jpg',
         name: 'Yummy',
         Artist: "Justin Bieber",
         Released: 2020,
         duration: "03:23",
-        path: '/assets/songs/Justin_Bieber_-_Yummy_(Lyrics)(128k).mp3'
+        path: './assets/songs/Justin_Bieber_-_Yummy_(Lyrics)(128k).mp3'
     },
     {
         number: '06',
-        image: '/assets/songimage/thelazysong.jpg',
+        image: './assets/songimage/thelazysong.jpg',
         name: 'The Lazy Song',
         Artist: "Bruno Mars",
         Released: 200,
         duration: "03:54",
-        path: '/assets/songs/The_Lazy_Song_-_Bruno_Mars_(Lyrics)_🎵(128k).mp3'
+        path: './assets/songs/The_Lazy_Song_-_Bruno_Mars_(Lyrics)_🎵(128k).mp3'
     },
     {
         number: '07',
-        image: '/assets/songimage/thelazysong.jpg',
+        image: './assets/songimage/thelazysong.jpg',
         name: 'Wolves',
         Artist: "Selena Gomez",
         Released: 200,
         duration: "03:32",
-        path: '/assets/songs/Selena_Gomez,_Marshmello_-_Wolves(128k).mp3'
+        path: './assets/songs/Selena_Gomez,_Marshmello_-_Wolves(128k).mp3'
     },
     {
         number: '07',
-        image: '/assets/songimage/thelazysong.jpg',
+        image: './assets/songimage/thelazysong.jpg',
         name: 'Who says',
         Artist: "Selena Gomez",
         Released: 200,
         duration: "03:20",
-        path: '/assets/songs/Selena_Gomez_&_The_Scene_-_Who_Says(128k).mp3'
+        path: './assets/songs/Selena_Gomez_&_The_Scene_-_Who_Says(128k).mp3'
     },
     {
         number: '07',
-        image: '/assets/songimage/thelazysong.jpg',
+        image: './assets/songimage/thelazysong.jpg',
         name: 'My Dilemma',
         Artist: "Selena Gomez",
         Released: 200,
         duration: '03:22',
-        path: '/assets/songs/Selena_Gomez_-_My_Dilemma_(Music_video)(128k).mp3'
+        path: './assets/songs/Selena_Gomez_-_My_Dilemma_(Music_video)(128k).mp3'
     },
     {
         number: '07',
-        image: '/assets/songimage/thelazysong.jpg',
+        image: './assets/songimage/thelazysong.jpg',
         name: 'The heart whats what it wants',
         Artist: "Selena Gomez",
         Released: 200,
         duration: "04:35",
-        path: '/assets/songs/Selena_Gomez_-_The_Heart_Wants_What_It_Wants_(Official_Video)(128k).mp3'
+        path: './assets/songs/Selena_Gomez_-_The_Heart_Wants_What_It_Wants_(Official_Video)(128k).mp3'
     },
 ]
 const Block = document.querySelector('.blocks')
