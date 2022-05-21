@@ -1,12 +1,12 @@
 let songs = [
     {
         number: '01',
-        image: './assets/songimage/despacito.jpg',
+        image: '../assets/songimage/despacito.jpg',
         name: 'Despacito',
         Artist: "Justin Bieber",
         Released: 2017,
         duration: "03:50",
-        path: './assets/songs/Justin_Bieber_–_Despacito_(Lyrics)_🎤_ft._Luis_Fonsi_&_Daddy_Yankee_[Pop](128k).mp3'
+        path: '../assets/songs/Justin_Bieber_–_Despacito_(Lyrics)_🎤_ft._Luis_Fonsi_&_Daddy_Yankee_[Pop](128k).mp3'
     },
     {
         number: '02',
